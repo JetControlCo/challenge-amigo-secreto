@@ -5,27 +5,27 @@ let amigos = [];
 
 
 /*Implementa una función para agregar amigos
-
-Desarrolla una función, que permita al usuario ingresar un nombre en el campo de texto y añadirlo a la lista de amigos creada anteriormente.
-
-Tareas específicas:
-Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
-
-Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
-
+ingresar un nombre en el campo de texto y añadirlo a la lista de amigos creada anteriormente.
+Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector
+Validar la entrada: que el campo no esté vacío. Si está vacío, alert : "Por favor, inserte un nombre."
 Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
-
-Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
+Limpiar el campo de entrada
 */
-
-function agregarAmigo(params) {
-
-    const imput = document.getElementById("amigo");
-    const amigoNuevo = imput.ariaValueMax.trim();
-    if (condition) {
-        
+function agregarAmigo() {
+    let amigo = document.getElementById('amigo').value;
+    if (amigo.trim() === "") {
+        alert("Por favor, inserte un nombre.");
+        return
+    } else if (amigos.includes(amigo)) {
+        alert("Este nombre ya está registrado, para diferenciar amigos usa sus apellidos");
+        document.querySelector("#amigo").value = "";
+        return
+    } else {
+        alert("El nombre de tu amigo es : "+amigo);
+        amigos.push(amigo);
+        document.querySelector("#amigo").value = "";
+        actualizarAmigos();
     }
-
 }
 
 
@@ -42,7 +42,7 @@ Iterar sobre el arreglo: Usa un bucle for para recorrer el arreglo amigos y crea
 
 Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.
 */
-function actualizarAmigos(params) {
+function actualizarAmigos() {
     
 }
 
@@ -59,6 +59,6 @@ Tareas específicas:
 
     Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById()  e innerHTML para mostrar el amigo sorteado.
 */
-function sortearAmigos(params) {
+function sortearAmigo() {
     
 }
